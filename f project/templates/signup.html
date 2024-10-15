@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AntiMatter Bank - Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Signup Form</h2>
+        <form action="/signup" method="post">
+            <input type="hidden" name="account_type" value="{{ session.get('account_type') }}">
+            <label for="AccNo">AccNo:</label>
+            <input type="number" name="AccNo" required>
+            <label for="Name">Name:</label>
+            <input type="text" name="Name" required>
+            <label for="Amount">Amount:</label>
+            <input type="number" name="Amount" required>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" required>
+            <button type="submit">Signup</button>
+        </form>
+    </div>
+</body>
+</html>

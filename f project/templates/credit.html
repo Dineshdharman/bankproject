@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit</title>
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container withdraw-credit-container">
+        <h1>Credit</h1>
+        {% if datas %}
+        <p>Account Number: {{ datas[0] }}</p>
+        <p>Username: {{ datas[1] }}</p>
+        <p>Current Amount: {{ datas[2] }}</p>
+        <form method="POST" class="withdraw-credit-form">
+            <label for="Amount">Amount to Credit:</label>
+            <input type="number" id="Amount" name="Amount" required>
+            <button type="submit">Credit</button>
+        </form>
+        {% endif %}
+        {% if message %}
+        <p class="withdraw-credit-message">{{ message }}</p>
+        {% endif %}
+        <div class="back-button">
+            <a href="{{ return_url }}">Back</a>
+        </div>
+    </div>
+</body>
+</html>

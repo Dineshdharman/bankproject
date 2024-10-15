@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AntiMatter Bank - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Login Form</h2>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" required>
+            <button type="submit">Login</button>
+            <a href="{{ url_for('signup')}}">SIGNUP</a><br>
+        </form>
+    </div>
+</body>
+</html>
